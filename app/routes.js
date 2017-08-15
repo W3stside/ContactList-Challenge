@@ -1,8 +1,8 @@
 /* eslint react/no-multi-comp: 0 */
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-// COMPONENTS
-import TestComponent from './components/TestComponent';
+// CONTAINERS
+import AddContactContainer 	from './containers/AddContactContainer'
 
 const About = () =>
 <div>
@@ -16,7 +16,7 @@ const Contact = () =>
 
 export default (
 	<Switch>
-		<Route exact path="/" component={TestComponent} />
+		<Route exact path="/" component={AddContactContainer} />
 		<Route path="/about" component={About} />
 		<Route path="/contact" component={Contact} />
 	</Switch>
