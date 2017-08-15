@@ -11,7 +11,7 @@ import { persistStore } from 'redux-persist';
 // CONTAINERS
 import Root from './containers/Root';
 // STYLING - adds default styling to index.html availble throughout app - please refer to ./styles/default.
-// import './styles/default';
+import './styles/default';
 
 // Call Configured Store
 const store = configureStore();
