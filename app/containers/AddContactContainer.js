@@ -9,6 +9,7 @@ import InputField from '../components/InputField'
 import SubmitButton from '../components/SubmitButton'
 // ACTIONCREATORS
 import { handleTextInput } from '../actions'
+import { addContact } from '../actions/contactActions'
 import * as types from '../actions/types'
 // Curried Action Creators from handleTextInput
 const contactHandler = handleTextInput(types.CONTACTS_TEXT_INPUT);
@@ -19,18 +20,13 @@ const handleContactDOB = contactHandler('dob');
 const handleContactPhone = contactHandler('phone');
 const handleContactEmail = contactHandler('email');
 
-const contact = [
-    {a: 1, email: 'd@d.com'},
-    {a: 2, email: 'd@d.com'},
-    {a: 3, email: 'd@d.com'}
-]
-
 // House form components here for adding contact
-export const AddContactContainer = ({dispatch, validateEmail}) =>
+export const AddContactContainer = ({contacts: {contact}, dispatch, validateEmail}) =>
     <div>
         <FormWrapper
             buttonName="Add Contact"
-            data={contact}>
+            data={contact}
+            submitAction={ (data) => dispatch(addContact(data))}>
             {/* First Name */}
             <InputField
                 id="ip1"
@@ -78,12 +74,19 @@ export const AddContactContainer = ({dispatch, validateEmail}) =>
     </div>
 
 AddContactContainer.propTypes = {
+    contacts: React.PropTypes.object,
     dispatch: React.PropTypes.func,
     validateEmail: React.PropTypes.func.isRequired
 }
 
+const mapStateToProps = state => {
+    return {
+        contacts: state.contacts
+    }
+}
+
 export default compose(
-    connect(),
+    connect(mapStateToProps),
     withProps({
         // Email validator
         validateEmail: (email) => {
