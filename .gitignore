@@ -40,4 +40,4 @@ ngrok
 .env
 
 #misc
-yarn_lock.txt
+yarn.lock

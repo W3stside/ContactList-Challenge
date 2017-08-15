@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'eval-source-map',
+    devtool: 'cheap-eval-source-map',
     entry: [
         'babel-polyfill',
         // connects to server to receive notifs when bundle rebuilds
@@ -53,8 +53,8 @@ module.exports = {
                 loader: 'json'
             },
             {
-                test: /\.scss$/,
-                loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass'
+                test: /\.(css|scss)$/,
+                loader: 'style!css!sass'
             },
             {
                 test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/,
