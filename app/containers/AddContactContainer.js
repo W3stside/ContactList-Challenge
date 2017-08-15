@@ -20,9 +20,9 @@ const handleContactPhone = contactHandler('phone');
 const handleContactEmail = contactHandler('email');
 
 const contact = [
-    {a: 1},
-    {a: 2},
-    {a: 3}
+    {a: 1, email: 'd@d.com'},
+    {a: 2, email: 'd@d.com'},
+    {a: 3, email: 'd@d.com'}
 ]
 
 // House form components here for adding contact

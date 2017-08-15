@@ -6,6 +6,7 @@ import { AddContactContainer } from '../../../app/containers/AddContactContainer
 
 function setup() {
     const props = {
+        validateEmail: sinon.spy()
     }
 
     const enzymeWrapper = shallow(<AddContactContainer {...props} />);
