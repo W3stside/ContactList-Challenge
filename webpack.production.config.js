@@ -76,10 +76,10 @@ module.exports = {
             test: /\.json?$/,
             loader: 'json'
         }, {
-            test: /\.scss$/,
+            test: /\.(css|scss)$/,
             // we extract the styles into their own .css file instead of having
             // them inside the js.
-            loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass')
+            loader: ExtractTextPlugin.extract('style', 'css?!sass')
         },
         // allows loading in local files via require() in front end
         {
