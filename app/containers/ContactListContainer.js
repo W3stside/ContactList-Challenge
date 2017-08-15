@@ -6,6 +6,8 @@ import { deleteContact, editContact } from '../actions/contactActions'
 import { handleTextInput } from '../actions'
 // CONSTANTS
 import * as types from '../actions/types'
+// COMPONENTS
+import ContactList from '../components/ContactList'
 
 export class ContactListContainer extends Component {
     render() {
@@ -15,7 +17,11 @@ export class ContactListContainer extends Component {
 
         return (
             <div>
-                {/* Contact list here */}
+                <ContactList
+                    data={contacts}
+                    handleContactDelete = { (id) => {dispatch(deleteContact(id))} }
+                    handleContactEdit   = { (id) => {dispatch(editContact(id))} }
+                    handleSavingID      = { (input) => {dispatch(handleID(input))}}/>
             </div>
         )
     }
