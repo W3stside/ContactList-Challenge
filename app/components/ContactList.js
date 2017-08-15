@@ -37,7 +37,12 @@ const ContactList = ({data, handleContactDelete, handleSavingID}) => {
             accessor: 'actions',
             Cell: (rowInfo) =>
                 <div style={{fontSize: 10}}>
-                    {/* EDIT Link here */}
+                    <Link
+                        onClick={ () => handleSavingID(rowInfo.row.id) }
+                        style={{padding: 10}}
+                        to={`/EditContact/${rowInfo.row.id}`}>
+                        EDIT
+                    </Link>
                     <Link
                         onClick={ () => handleContactDelete(rowInfo.row.id) }
                         to="#">
