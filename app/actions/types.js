@@ -1,4 +1,3 @@
-/**
- * CONSTANTS
- * ex: const TEXT_INPUT = 'TEXT_INPUT';
- */
+// CONSTANTS
+
+export const CONTACTS_TEXT_INPUT    = 'CONTACTS_TEXT_INPUT'

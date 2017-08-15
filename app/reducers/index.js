@@ -1,5 +1,7 @@
-import { routerReducer as routing } from 'react-router-redux';
-import { combineReducers } from 'redux';
+import { routerReducer as routing } from 'react-router-redux'
+import { combineReducers } from 'redux'
+// SLICE REDUCERS
+import contacts from './contactsReducer'
 
 /**
  * Redux root Reducer - exports imported Reducers with each KEY as a REDUCER
@@ -7,6 +9,7 @@ import { combineReducers } from 'redux';
  * @type {object}
 */
 const rootReducer = combineReducers({
+    contacts,
     routing
 });
 
