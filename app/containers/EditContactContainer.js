@@ -7,6 +7,7 @@ import { compose, withProps } from 'recompose'
 import FormWrapper from '../components/FormWrapper'
 import InputField from '../components/InputField'
 import SubmitButton from '../components/SubmitButton'
+import Title from '../components/Title'
 // ACTIONCREATORS
 import { editContact } from '../actions/contactActions'
 import { handleTextInput } from '../actions'
@@ -25,6 +26,7 @@ const handleContactEmail = contactHandler('email');
 export const EditContactContainer = ({contacts: { contact }, dispatch, validateEmail}) => {
     return (
         <div>
+            <Title text="Edit Contact"/>
             <FormWrapper
                 buttonName="Add Contact"
                 data={contact}

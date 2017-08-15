@@ -1,5 +1,6 @@
 // CONSTANTS
 import * as types from './types'
+import {push} from 'react-router-redux'
 
 let contactID = 0;
 
@@ -13,18 +14,20 @@ export const addContact = info => dispatch => {
             }
         }
     })
-    return dispatch({
+    dispatch({
         type: types.CONTACTS_CLEAR
     })
+    return dispatch(push('/ContactList'))
 }
 
-export const editContact = data => {
-    return {
+export const editContact = data => dispatch => {
+    dispatch({
         type: types.CONTACTS_EDIT,
         payload: {
             ...data
         }
-    }
+    })
+    return dispatch(push('/ContactList'))
 }
 
 export const deleteContact = id => {

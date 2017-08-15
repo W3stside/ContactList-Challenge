@@ -8,6 +8,7 @@ import { handleTextInput } from '../actions'
 import * as types from '../actions/types'
 // COMPONENTS
 import ContactList from '../components/ContactList'
+import Title from '../components/Title'
 
 export class ContactListContainer extends Component {
     render() {
@@ -17,6 +18,7 @@ export class ContactListContainer extends Component {
 
         return (
             <div>
+                <Title text="Contact List"/>
                 <ContactList
                     data={contacts}
                     handleContactDelete = { (id) => {dispatch(deleteContact(id))} }
