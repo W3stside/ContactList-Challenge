@@ -8,8 +8,8 @@ const FormWrapper = ({buttonName, children, data, submitAction}) =>
     <form
         className="flex colNoWrap aCenter jCenter width100"
         onSubmit={ (e) => {
-            // stop page refresh
-            e.preventDefault();
+            // stop page refresh - RE_ENABLE AFTER TESTS
+            // e.preventDefault();
             // dispatch onSubmit handler
             submitAction(data);
         }}>
