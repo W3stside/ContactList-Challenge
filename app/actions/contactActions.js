@@ -17,3 +17,19 @@ export const addContact = info => dispatch => {
         type: types.CONTACTS_CLEAR
     })
 }
+
+export const editContact = data => {
+    return {
+        type: types.CONTACTS_EDIT,
+        payload: {
+            ...data
+        }
+    }
+}
+
+export const deleteContact = id => {
+    return {
+        type: types.CONTACTS_DELETE,
+        payload: id
+    }
+}

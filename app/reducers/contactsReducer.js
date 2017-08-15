@@ -42,6 +42,26 @@ const contactListReducer = (state = initialState, action) => {
                     email: ''
                 }
             }
+        case types.CONTACTS_EDIT:
+            return {
+                ...state,
+                contacts: state.contacts.map(c => {
+                    if(c.id !== action.payload.id) {
+                        return c;
+                    }
+                    return {
+                        ...c,
+                        ...action.payload
+                    }
+                })
+            }
+        case types.CONTACTS_DELETE:
+            return {
+                ...state,
+                contacts: state.contacts.filter(c =>
+                    c.id !== action.payload
+                )
+            }
         default:
             return state;
     }
