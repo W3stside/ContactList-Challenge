@@ -1,5 +1,9 @@
 # Boilerplate used: David's (me) MERN-TDD Build (found [here](https://github.com/w3stside/MERN-Redux-TDD-Build))
 
+Completion time: 2 hours
+
+Live [here](https://contact-list-code-challenge.herokuapp.com)
+
 # Contact Challenge
 > Create a simple contact list app in React w/Redux and use only Redux clientside store as data storage
 > 3 views
